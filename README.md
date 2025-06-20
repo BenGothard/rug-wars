@@ -7,6 +7,8 @@ A simple 2D browser-based pixel brawler prototype. Control meme-inspired charact
 - "Pepe Hop" jumping
 - "Doge Rocket" dash
 - Shoot projectiles
+- 3 hit points per player; projectiles deal damage
+- Remaining HP shown above each fighter
 - Random "Rug Alert" collapses part of the floor
 
 ## How to Play

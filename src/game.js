@@ -19,6 +19,7 @@ class Player {
         this.facing = 1;
         this.ai = ai;
         this.cooldown = 0;
+        this.hp = 3;
     }
 
     handleInput(keys, target) {
@@ -85,6 +86,9 @@ class Player {
     draw() {
         ctx.fillStyle = this.color;
         ctx.fillRect(this.x, this.y - this.height, this.width, this.height);
+        ctx.fillStyle = 'white';
+        ctx.font = '12px sans-serif';
+        ctx.fillText('HP: ' + this.hp, this.x - 5, this.y - this.height - 5);
     }
 }
 
@@ -151,6 +155,8 @@ function update() {
                 proj.y < p.y &&
                 proj.y + proj.height > p.y - p.height) {
                 projectiles.splice(i, 1);
+                p.hp -= 1;
+                if (p.hp < 0) p.hp = 0;
             }
         });
     }
